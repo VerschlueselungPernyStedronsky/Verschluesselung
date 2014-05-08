@@ -14,7 +14,9 @@ public class ShiftCipher extends MonoAlphabeticCipher {
 	
 	
 	/*
+	 * In dieser Methode wird das Standardalphabet um einen Übergebenen Wert verschoben.
 	 * 
+	 * @param shiftValue der Wert der Verschiebung.
 	 */
 	public void setShiftCipher(int shiftValue){
 		String alph = super.getSecretAlphabet();
