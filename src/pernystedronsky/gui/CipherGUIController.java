@@ -109,7 +109,29 @@ public class CipherGUIController implements ActionListener{
 	 * @author Perny Tobias
 	 */
 	public void Shift(String command) {
-		
+		String text="";
+		String att="";
+		String endtext="";
+		int versch=0;
+		if(command.equals("encryptShift")){
+			text=g.getTextField(0);
+			att=g.getTextField(1);
+			versch=Integer.parseInt(att);
+			ShiftCipher s= new ShiftCipher(versch);
+			s.setSecretAlphabet(att);
+			endtext=s.encrypt(text);
+			g.setTextField(0, endtext);
+		}
+
+		if(command.equals("decryptShift")){
+			text=g.getTextField(2);
+			att=g.getTextField(3);
+			versch=Integer.parseInt(att);
+			ShiftCipher s= new ShiftCipher(versch);
+			s.setSecretAlphabet(att);
+			endtext=s.decrypt(text);
+			g.setTextField(2, endtext);
+		}
 		
 	}
 	
@@ -119,7 +141,25 @@ public class CipherGUIController implements ActionListener{
 	 * @author Perny Tobias
 	 */
 	public void Key(String command) {
-		
+		String text="";
+		String att="";
+		String endtext="";
+		if(command.equals("encryptKey")){
+			text=g.getTextField(0);
+			att=g.getTextField(1);
+			KeywordCipher k= new KeywordCipher(att);
+			k.setSecretAlphabet(att);
+			endtext=k.encrypt(text);
+			g.setTextField(0, endtext);
+		}
+		if(command.equals("decryptKey")){
+			text=g.getTextField(2);
+			att=g.getTextField(3);
+			KeywordCipher k= new KeywordCipher(att);
+			k.setSecretAlphabet(att);
+			endtext=k.decrypt(text);
+			g.setTextField(2, endtext);
+		}
 		
 	}
 	
