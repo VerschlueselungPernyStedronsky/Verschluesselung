@@ -7,6 +7,7 @@ import pernystedronsky.cipher.ShiftCipher;
 import pernystedronsky.cipher.SubstitutionCipher;
 import pernystedronsky.cipher.TranspositionCipher;
 import pernystedronsky.gui.CipherGUIController;
+import pernystedronsky.gui.CipherGUIController2;
 
 
 /**
@@ -126,5 +127,13 @@ public class Test {
 	@org.junit.Test
 	public void gui() {
 		CipherGUIController c= new CipherGUIController();
+	}
+	
+	/**
+	 * JUnit Test für GUIController
+	 */
+	@org.junit.Test
+	public void gui1() {
+		CipherGUIController2 c= new CipherGUIController2();
 	}
 }
