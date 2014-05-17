@@ -1,7 +1,7 @@
 package pernystedronsky.cipher;
 
 public class KeywordCipher extends MonoAlphabeticCipher{
-	
+
 	/**
 	 * Konstruktor
 	 * 
@@ -12,8 +12,8 @@ public class KeywordCipher extends MonoAlphabeticCipher{
 		super();
 		setKeywordCipher(keyword);
 	} 
-	
-	
+
+
 	/**
 	 * In dieser Methode wird das Standardalphabet mithilfe eines Keywords Chiffriert.
 	 * 
@@ -39,7 +39,8 @@ public class KeywordCipher extends MonoAlphabeticCipher{
 				}
 			}
 		}
-			kfer=true;		//wenn alle buchstaben des Keywords gespeichert sind wird diese Variable true gesetzt
+		kfer=true;	//wenn alle buchstaben des Keywords gespeichert sind wird diese Variable true gesetzt
+		kfer=true;		//wenn alle buchstaben des Keywords gespeichert sind wird diese Variable true gesetzt
 		for(int i=0;i<alph.length();i++){	//In dieser Schleife werden die verbleibenden Buchstaben des Alphabets der Variable hinzugefügt.
 			da = false;
 			if(kfer==true){
@@ -53,5 +54,6 @@ public class KeywordCipher extends MonoAlphabeticCipher{
 				}
 			}
 		}
+		super.setSecretAlphabet(kalph);
 	}
 }
