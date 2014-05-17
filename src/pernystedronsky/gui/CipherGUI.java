@@ -32,11 +32,13 @@ private JTextField[] t1= new JTextField[4];
 	 * @author Stedronsky Thomas
 	 */
 	public void init() {
-		setLayout(new GridLayout(6, 1));
-		setSize(800, 200);
+		setLayout(new GridLayout(6, 1)); //LAyut des fensters wird gestzt
+		setSize(800, 200); //Fenster größe
 		JLabel[] l = new JLabel[2];
+		//Überschriften werden mit JLAbel erzeugt
 		l[0]=new JLabel("Verschlüsseln");
 		l[1]=new JLabel("Entschlüsseln");
+		/*Die Panels werden mit dem jeweiligen LAyout versehen*/
 		JPanel[] p= new JPanel[6]; 
 		p[0]=new JPanel();
 		p[1]=new JPanel(new GridLayout(1,2));
@@ -48,6 +50,7 @@ private JTextField[] t1= new JTextField[4];
 		t1[0] = new JTextField();
 		t1[1] = new JTextField();
 		
+		/*Die Buttons für die verschlüsselung werden gesetzt und der ActionListener + ActionCommand werden hinzugefügt.*/
 		JButton[] b1 = new JButton[5];
 		b1[0]= new JButton("MonoAlpha");
 		b1[0].setActionCommand("encryptMono");
@@ -72,6 +75,7 @@ private JTextField[] t1= new JTextField[4];
 		t1[2] = new JTextField();
 		t1[3] = new JTextField();
 		
+		/*Die Buttons für die entschlüsselung werden gesetzt und der ActionListern + ActionCommand werden hinzugefügt.*/
 		JButton[] b2 = new JButton[5];
 		b2[0]= new JButton("MonoAlpha");
 		b2[0].setActionCommand("decryptMono");
@@ -89,7 +93,7 @@ private JTextField[] t1= new JTextField[4];
 		b2[3].setActionCommand("decryptSub");
 		b2[3].addActionListener(this.c);
 		
-		b2[4]= new JButton("Transposition");
+		b2[4]= new JButton("Transposition"); 
 		b2[4].setActionCommand("decryptTrans");
 		b2[4].addActionListener(this.c);
 		

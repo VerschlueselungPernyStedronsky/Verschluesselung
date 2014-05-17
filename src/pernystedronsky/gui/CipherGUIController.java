@@ -30,6 +30,7 @@ public class CipherGUIController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
+		//Die if's bestimmen welche Klasse aufgerufen wird 
 		if(command.equals("encryptMono")||command.equals("decryptMono")){
 			this.Mono(command);
 		}
@@ -58,21 +59,23 @@ public class CipherGUIController implements ActionListener{
 		String endtext="";
 		int stage=0;
 		if(command.equals("encryptTrans")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(0);
 			att=g.getTextField(1);
-			stage=Integer.parseInt(att);
+			stage=Integer.parseInt(att); //Der String wert wird in eine Int umgewandelt
 			TranspositionCipher t= new TranspositionCipher(stage);
 			endtext=t.encrypt(text);
-			g.setTextField(0, endtext);
+			g.setTextField(0, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 
 		if(command.equals("decryptTrans")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(2);
 			att=g.getTextField(3);
-			stage=Integer.parseInt(att);
+			stage=Integer.parseInt(att); //Der String wert wird in eine Int umgewandelt
 			TranspositionCipher t= new TranspositionCipher(stage);
 			endtext=t.decrypt(text);
-			g.setTextField(2, endtext);
+			g.setTextField(2, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 	}
 
@@ -86,19 +89,21 @@ public class CipherGUIController implements ActionListener{
 		String att="";
 		String endtext="";
 		if(command.equals("encryptSub")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(0);
 			att=g.getTextField(1);
 			SubstitutionCipher s= new SubstitutionCipher(att);
 			endtext=s.encrypt(text);
-			g.setTextField(0, endtext);
+			g.setTextField(0, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 
 		if(command.equals("decryptSub")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(2);
 			att=g.getTextField(3);
 			SubstitutionCipher s= new SubstitutionCipher(att);
 			endtext=s.decrypt(text);
-			g.setTextField(2, endtext);
+			g.setTextField(2, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 
 	}
@@ -115,21 +120,23 @@ public class CipherGUIController implements ActionListener{
 		String endtext="";
 		int versch=0;
 		if(command.equals("encryptShift")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(0);
 			att=g.getTextField(1);
-			versch=Integer.parseInt(att);
+			versch=Integer.parseInt(att); //Der String wert wird in eine Int umgewandelt
 			ShiftCipher s= new ShiftCipher(versch);
 			endtext=s.encrypt(text);
-			g.setTextField(0, endtext);
+			g.setTextField(0, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 
 		if(command.equals("decryptShift")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(2);
 			att=g.getTextField(3);
-			versch=Integer.parseInt(att);
+			versch=Integer.parseInt(att); //Der String wert wird in eine Int umgewandelt
 			ShiftCipher s= new ShiftCipher(versch);
 			endtext=s.decrypt(text);
-			g.setTextField(2, endtext);
+			g.setTextField(2, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 
 	}
@@ -144,18 +151,20 @@ public class CipherGUIController implements ActionListener{
 		String att="";
 		String endtext="";
 		if(command.equals("encryptKey")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(0);
 			att=g.getTextField(1);
 			KeywordCipher k= new KeywordCipher(att);
 			endtext=k.encrypt(text);
-			g.setTextField(0, endtext);
+			g.setTextField(0, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 		if(command.equals("decryptKey")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(2);
 			att=g.getTextField(3);
-			KeywordCipher k= new KeywordCipher(att);
+			KeywordCipher k= new KeywordCipher(att); 
 			endtext=k.decrypt(text);
-			g.setTextField(2, endtext);
+			g.setTextField(2, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 		
 
@@ -171,21 +180,23 @@ public class CipherGUIController implements ActionListener{
 		String att="";
 		String endtext="";
 		if(command.equals("encryptMono")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(0);
 			att=g.getTextField(1);
 			MonoAlphabeticCipher m= new MonoAlphabeticCipher();
 			m.setSecretAlphabet(att);
 			endtext=m.encrypt(text);
-			g.setTextField(0, endtext);
+			g.setTextField(0, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 
 		if(command.equals("decryptMono")){
+			//Die Inhalte aus den Textfeldern werden mit der Methode getTextField geholt.
 			text=g.getTextField(2);
 			att=g.getTextField(3);
 			MonoAlphabeticCipher m= new MonoAlphabeticCipher();
 			m.setSecretAlphabet(att);
 			endtext=m.decrypt(text);
-			g.setTextField(2, endtext);
+			g.setTextField(2, endtext); //Das Ergebniss wird ins Textfeld geschrieben
 		}
 
 	}
