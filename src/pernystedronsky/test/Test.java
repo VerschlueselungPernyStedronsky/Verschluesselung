@@ -1,8 +1,12 @@
 package pernystedronsky.test;
 
 import static org.junit.Assert.*;
+import pernystedronsky.cipher.KeywordCipher;
 import pernystedronsky.cipher.MonoAlphabeticCipher;
+import pernystedronsky.cipher.ShiftCipher;
 import pernystedronsky.cipher.SubstitutionCipher;
+import pernystedronsky.cipher.TranspositionCipher;
+import pernystedronsky.gui.CipherGUIController;
 
 
 /**
@@ -72,5 +76,55 @@ public class Test {
 			System.out.println("Erfolgreich");
 		}
 	}
-
+	
+	/**
+	 * JUnit Test für TranspositonCipher
+	 */
+	@org.junit.Test
+	public void trans() {
+		TranspositionCipher t= new TranspositionCipher(2);
+		t.encrypt("Thomas");
+		if(t.decrypt("TOAHMS").equals("THOMAS"))System.out.println("Transposition Erfolgreich");
+	}
+	
+	/**
+	 * JUnit Test für TranspositonCipher
+	 */
+	@org.junit.Test
+	public void trans1() {
+		TranspositionCipher t= new TranspositionCipher(-1); //Um die else Bedindung zu checken
+		t.setTranspositionLevel(-1); //Um die else Bedindung zu checken
+		t.setTranspositionLevel(4);
+		t.encrypt("Thomas"); 
+		if(t.decrypt("TAHSOM").equals("THOMAS"))System.out.println("Transposition Erfolgreich1");
+	}
+	
+	/**
+	 * JUnit Test für ShiftCipher
+	 */
+	@org.junit.Test
+	public void shift() {
+		ShiftCipher s= new ShiftCipher(-1); //Um die else Bedindung zu checken
+		ShiftCipher s1= new ShiftCipher(3); //Um die else Bedindung zu checken
+		s1.encrypt("3BHIT");
+		if(s1.decrypt("3eklw").equals("3bhit"))System.out.println("Shift Erfolgreich");
+	}
+	
+	/**
+	 * JUnit Test für KeyWordCipher
+	 */
+	@org.junit.Test
+	public void key() {
+		KeywordCipher s= new KeywordCipher("hallo"); 
+		s.encrypt("3BHIT");
+		if(s.decrypt("3aeft").equals("3bhit"))System.out.println("KeyWordCipher Erfolgreich");
+	}
+	
+	/**
+	 * JUnit Test für GUIController
+	 */
+	@org.junit.Test
+	public void gui() {
+		CipherGUIController c= new CipherGUIController();
+	}
 }

@@ -21,7 +21,7 @@ public class CipherGUIController implements ActionListener{
 	public CipherGUIController() {
 		this.g=new CipherGUI(this);
 	}
-	
+
 	/**
 	 * Methode die auf den Klick auf einen Button reagiert.
 	 * @param ActionEvent(gedrückter button)
@@ -46,7 +46,7 @@ public class CipherGUIController implements ActionListener{
 			this.Trans(command);
 		}
 	}
-	
+
 	/**
 	 * Methode die den TranspositionCipher steuert.
 	 * @param command ActionCommand des Button
@@ -65,7 +65,7 @@ public class CipherGUIController implements ActionListener{
 			endtext=t.encrypt(text);
 			g.setTextField(0, endtext);
 		}
-		
+
 		if(command.equals("decryptTrans")){
 			text=g.getTextField(2);
 			att=g.getTextField(3);
@@ -75,7 +75,7 @@ public class CipherGUIController implements ActionListener{
 			g.setTextField(2, endtext);
 		}
 	}
-	
+
 	/**
 	 * Methode die den SubstitutionCipher steuert
 	 * @param command ActionCommand
@@ -92,7 +92,7 @@ public class CipherGUIController implements ActionListener{
 			endtext=s.encrypt(text);
 			g.setTextField(0, endtext);
 		}
-		
+
 		if(command.equals("decryptSub")){
 			text=g.getTextField(2);
 			att=g.getTextField(3);
@@ -100,8 +100,9 @@ public class CipherGUIController implements ActionListener{
 			endtext=s.decrypt(text);
 			g.setTextField(2, endtext);
 		}
-		
+
 	}
+	
 	
 	/**
 	 * Methode die den ShiftCipher Steuert
@@ -118,7 +119,6 @@ public class CipherGUIController implements ActionListener{
 			att=g.getTextField(1);
 			versch=Integer.parseInt(att);
 			ShiftCipher s= new ShiftCipher(versch);
-			s.setSecretAlphabet(att);
 			endtext=s.encrypt(text);
 			g.setTextField(0, endtext);
 		}
@@ -128,13 +128,12 @@ public class CipherGUIController implements ActionListener{
 			att=g.getTextField(3);
 			versch=Integer.parseInt(att);
 			ShiftCipher s= new ShiftCipher(versch);
-			s.setSecretAlphabet(att);
 			endtext=s.decrypt(text);
 			g.setTextField(2, endtext);
 		}
-		
+
 	}
-	
+
 	/**
 	 * Methode die den KeywordCipher Steuert
 	 * @param command ActioCommand
@@ -148,7 +147,6 @@ public class CipherGUIController implements ActionListener{
 			text=g.getTextField(0);
 			att=g.getTextField(1);
 			KeywordCipher k= new KeywordCipher(att);
-			k.setSecretAlphabet(att);
 			endtext=k.encrypt(text);
 			g.setTextField(0, endtext);
 		}
@@ -156,13 +154,13 @@ public class CipherGUIController implements ActionListener{
 			text=g.getTextField(2);
 			att=g.getTextField(3);
 			KeywordCipher k= new KeywordCipher(att);
-			k.setSecretAlphabet(att);
 			endtext=k.decrypt(text);
 			g.setTextField(2, endtext);
 		}
 		
+
 	}
-	
+
 	/**
 	 * Methode die den MonoAlpabethicCipher Steuert
 	 * @param command ActioCommand
@@ -180,7 +178,7 @@ public class CipherGUIController implements ActionListener{
 			endtext=m.encrypt(text);
 			g.setTextField(0, endtext);
 		}
-		
+
 		if(command.equals("decryptMono")){
 			text=g.getTextField(2);
 			att=g.getTextField(3);
@@ -189,7 +187,7 @@ public class CipherGUIController implements ActionListener{
 			endtext=m.decrypt(text);
 			g.setTextField(2, endtext);
 		}
-		
+
 	}
-	
+
 }

@@ -11,7 +11,6 @@ public class TranspositionCipher implements Cipher {
 
 	/**
 	 * Konstruktor der den transpositonLevel
-	 * @author Stedronsky Thomas
 	 * @param  transpositonLevel Stufe der Gartentzaun verschlüsselung
 	 */
 	public TranspositionCipher(int transpositonLevel){
@@ -25,7 +24,6 @@ public class TranspositionCipher implements Cipher {
 
 	/**
 	 * TranspositionLEvel wird festgelegt
-	 * @author Stedronsky Thomas
 	 * @param  level Stufe der Gartentzaun verschlüsselung
 	 */
 	public void setTranspositionLevel(int level){
@@ -73,7 +71,7 @@ public class TranspositionCipher implements Cipher {
 		String text=verText.toUpperCase();
 		String [] decrypt= new String [this.transpositonLevel]; //Array mit den Stufen des Attributts
 		int [] anzahl = new int [this.transpositonLevel];//Anzahl der Buchstaben in jeder Zeile 
-		int groesse = 1;
+		int groesse = 1; 
 		int anzahlzaehler=0;
 		
 		//String[] wird initalisiert.
@@ -95,7 +93,7 @@ public class TranspositionCipher implements Cipher {
 		}
 
 		
-		for(int i = 0; i < text.length(); i++){
+		for(int i = 0; i < text.length(); i++){ 
 			decrypt[anzahlzaehler] += "" + text.charAt(i);
 			if(groesse == anzahl[anzahlzaehler]){
 				anzahlzaehler++;

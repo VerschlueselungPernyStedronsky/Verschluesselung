@@ -2,23 +2,24 @@ package pernystedronsky.cipher;
 
 public class KeywordCipher extends MonoAlphabeticCipher{
 	
-	/*
+	/**
 	 * Konstruktor
 	 * 
 	 * @param keyword das gewünschte Keyword
+	 * @author Perny Tobias
 	 */
 	public KeywordCipher(String keyword){
 		super();
 		setKeywordCipher(keyword);
-	}
+	} 
 	
 	
-	/*
+	/**
 	 * In dieser Methode wird das Standardalphabet mithilfe eines Keywords Chiffriert.
 	 * 
 	 * @param keyword das gewünschte Keyword
 	 */
-	public void setKeywordCipher(String keyword){
+	public void setKeywordCipher(String keyword){ 
 		String alph = super.getSecretAlphabet();
 		String kalph = "";
 		boolean da = false;
@@ -52,5 +53,6 @@ public class KeywordCipher extends MonoAlphabeticCipher{
 				}
 			}
 		}
+		super.setSecretAlphabet(kalph);
 	}
 }
